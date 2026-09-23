@@ -6,15 +6,16 @@
 **customer:** My Starter Ritual Kit order still hasn't arrived and tracking hasn't moved in over a week. Every single order has some issue. I'm getting really sick of this.
 
 **ESCALATED:** {
- "subject": "Stalled tracking on O26130 Starter Ritual Kit \u2014 frustrated VIP subscriber",
+ "subject": "Stalled tracking on Starter Ritual Kit O26130 \u2014 repeat issue, angry VIP subscriber",
  "priority": "urgent",
  "tags": [
   "shipping",
   "angry-customer",
-  "vip"
+  "vip",
+  "subscription"
  ],
- "ai_summary": "WHO: Liam Mora, C102938, $746.04 LTV, active subscriber, France. ISSUE: Latest order O26130 (Starter Ritual Kit, $52.60, placed 2026-05-12) hasn't arrived and tracking hasn't updated in over a week; he says every order has had problems. WANTS: His order located/delivered, and to stop the repeat issues. CONTEXT: Prior support chat CH53031 (Dec 2025) was unresolved with CSAT 1 over a similar stalled-shipment issue. SUGGESTED ACTION: Open carrier investigation per article 201 (tracking stalled 5+ business days), and given the repeat bad experience, proactively offer replacement or refund and follow up directly.",
- "customer_visible_message": "I'm sorry, Liam \u2014 this shouldn't keep happening. I've handed this to a teammate with our full conversation, and they'll reply right here."
+ "ai_summary": "WHO: Liam Mora, C102938, $746.04 LTV, active subscriber, region FR. ISSUE: Starter Ritual Kit order O26130 (placed 2026-05-12, subscription) hasn't arrived and tracking hasn't moved in over a week. WANTS: His order located and delivered, without another multi-day wait. CONTEXT: Prior chat CH53031 (2025-12-04) on the exact same stalled-tracking problem was left unresolved with CSAT 1 after being told to wait 3-5 business days; he says every order has an issue. SUGGESTED ACTION: Open a carrier investigation now per article 201 (tracking stalled 5+ business days), give Liam a direct owner and a concrete update time, and consider replacement or refund goodwill given the repeat failure.",
+ "customer_visible_message": "A week of no tracking movement on your Kit is not okay, and I can see the same thing went unresolved for you last December. I'm handing this straight to our team now so someone chases the carrier and sorts it properly."
 }
 
 ---
@@ -24,9 +25,11 @@
 
 **customer:** Hey, my last order seems a bit delayed — any idea what's going on?
 
-**ai:** Your most recent order is O26130 — Starter Ritual Kit, placed 2026-05-12. France orders take 7–14 business days, so that's well past the window, and if tracking hasn't updated for 5+ business days we investigate with the carrier. [source: Shipping times & costs]
+**ai:** That would be O26130, your Starter Ritual Kit from 2026-05-12. Shipping to France runs 7-14 business days, and your tracking link goes out by email at shipment — the widget can't show live tracking.
 
-Want me to hand this to the team to chase it down?
+Given how long it's been, that's well past the point where we'd chase the carrier. Want me to hand it to the team to investigate?
+
+[source: Shipping times & costs]
 
 ---
 
@@ -35,22 +38,24 @@ Want me to hand this to the team to chase it down?
 
 **customer:** Hey, my last order seems a bit delayed — any idea what's going on?
 
-**ai:** Your most recent order is O26130 — Starter Ritual Kit, placed 2026-05-12, shipping to France, where delivery runs 7-14 business days at $19.95 flat. Given that date, it's well past that window, and if tracking hasn't moved for 5+ business days we'll chase the carrier. [source: Shipping times & costs]
+**ai:** Your most recent order is O26130, the Starter Ritual Kit, placed 2026-05-12. That's well past the 7-14 business days for France, so something's clearly off there.
 
-Want me to hand this to the team to investigate?
+Tracking links go out by email at shipment, and the widget can't show live tracking. Want me to hand this to our team to chase with the carrier?
+
+[source: Shipping times & costs]
 
 **customer:** Yes please, that would be great.
 
 **ESCALATED:** {
- "subject": "Order O26130 (FR) undelivered well past window \u2014 carrier investigation (VIP subscriber)",
+ "subject": "Order O26130 (FR) far past delivery window \u2014 carrier investigation (VIP subscriber)",
  "priority": "high",
  "tags": [
   "shipping",
   "vip",
   "subscription"
  ],
- "ai_summary": "WHO: Liam Mora, C102938, $746.04 LTV, active subscriber, France. ISSUE: Latest order O26130 (Starter Ritual Kit, $52.60, placed 2026-05-12) appears delayed \u2014 far beyond the 7-14 business day international window as of 2026-08-20. WANTS: Investigation into where the order is and resolution. CONTEXT: Also has subscription order O26138 (Renew Serum) same date; prior unresolved support chat CH53031 about a stalled delivery with CSAT 1 \u2014 handle with extra care. SUGGESTED ACTION: Check carrier tracking for O26130 (and O26138), open a carrier investigation per Shipping article, and offer replacement or refund given the extreme delay.",
- "customer_visible_message": "Done \u2014 a teammate has your full conversation and will reply right here shortly."
+ "ai_summary": "WHO: Liam Mora, C102938, $746.04 LTV, active subscriber, region FR. ISSUE: Latest order O26130 (Starter Ritual Kit, $52.60, placed 2026-05-12) appears undelivered/delayed, far beyond the 7-14 business day international window. WANTS: Someone to find out where the order is and resolve it. CONTEXT: Also has O26138 (Renew Serum) same date; prior support chat CH53031 about a stalled delivery was left unresolved with CSAT 1. SUGGESTED ACTION: Check carrier tracking for O26130, investigate with carrier per shipping policy, and proactively offer replacement or refund given the age of the delay and prior bad experience.",
+ "customer_visible_message": "An order from May still not landing isn't okay, and I can see a similar delivery issue never got resolved for you last time. I'm connecting you with our team now so they can chase the carrier and make it right."
 }
 
 ---
@@ -60,12 +65,16 @@ Want me to hand this to the team to investigate?
 
 **customer:** Hey, my last order seems a bit delayed — any idea what's going on?
 
-**ai:** Your most recent order is O26130 (Starter Ritual Kit, $52.60) placed 2026-05-12 — that's well past the 7-14 business days for France, so something's clearly off there. Tracking links go out by email at shipment, and since it's been more than 5 business days without movement, we should investigate with the carrier. Want me to hand this to the team? [source: Shipping times & costs]
+**ai:** Your most recent order is O26130, the Starter Ritual Kit from 2026-05-12. Tracking links go out by email at shipment, and I can't see live tracking here.
+
+For France, orders take 7-14 business days. If tracking hasn't updated in 5+ business days, we'll chase the carrier. Want me to hand this to the team?
+
+[source: Shipping times & costs]
 
 **customer:** A week late and no update?? This is the third time in a row. Fix it or I'm cancelling everything.
 
 **ESCALATED:** {
- "subject": "VIP subscriber \u2014 O26130 severely delayed, threatening to cancel",
+ "subject": "Delayed order O26130 \u2014 repeat issue, VIP subscriber threatening cancellation",
  "priority": "urgent",
  "tags": [
   "shipping",
@@ -73,8 +82,8 @@ Want me to hand this to the team to investigate?
   "vip",
   "subscription"
  ],
- "ai_summary": "WHO: Liam Mora, C102938, $746.04 LTV, active subscriber, France. ISSUE: Order O26130 (Starter Ritual Kit, $52.60, placed 2026-05-12) has not arrived and tracking hasn't updated \u2014 far beyond the 7-14 business day international window. WANTS: The order resolved now; threatening to cancel his subscription entirely. CONTEXT: Repeat delivery issues; prior unresolved chat CH53031 (Dec 2025) about a stalled shipment, CSAT 1. SUGGESTED ACTION: Open carrier investigation immediately per article 201 and proactively offer replacement or refund; handle with retention care given VIP status and second bad shipping experience.",
- "customer_visible_message": "I've pulled in a human teammate right now \u2014 they have this whole conversation and your order details, and they'll reply here shortly."
+ "ai_summary": "WHO: Liam Mora, C102938, $746.04 LTV, active subscriber, France. ISSUE: Latest order O26130 (Starter Ritual Kit, 2026-05-12) is delayed with no tracking movement, reportedly about a week past expected; he says it's the third delayed order in a row. WANTS: The order located/fixed fast, or he will cancel his subscription. CONTEXT: Prior chat CH53031 (Dec 2025) on the same stalled-tracking issue was left unresolved with CSAT 1. SUGGESTED ACTION: Open a carrier investigation now per shipping policy (tracking stalled 5+ business days), contact Liam directly with a concrete update, and consider replacement/refund goodwill to retain a VIP subscriber.",
+ "customer_visible_message": "A week with no movement, on top of the last time this happened and never got sorted, is genuinely not okay. I'm connecting you with our team right now so they can chase the carrier and make this right."
 }
 
 ---
@@ -91,8 +100,8 @@ Want me to hand this to the team to investigate?
   "vip",
   "other"
  ],
- "ai_summary": "WHO: Quinn Xu, C102391, $741.64 LTV, active subscriber, DE region. ISSUE: Asked to speak with a human immediately; no reason given yet. WANTS: A human agent. CONTEXT: Latest order O23156 \u2014 Starter Ritual Kit, 2026-07-26, $112.53 (subscription order); prior chat CH52473 resolved with CSAT 5. SUGGESTED ACTION: Greet Quinn, ask what they need help with, and handle per relevant policy.",
- "customer_visible_message": "Of course \u2014 a teammate has your full conversation and will reply right here shortly."
+ "ai_summary": "WHO: Quinn Xu, C102391, $741.64 LTV, active subscriber, region DE. ISSUE: Asked to speak with a human right away; no specific problem stated yet. WANTS: not stated yet. CONTEXT: Latest order O23156, Starter Ritual Kit, placed 2026-07-26 (subscription order); prior support chat CSAT 5. SUGGESTED ACTION: Greet Quinn, ask what they need help with, and handle per relevant policy (returns/subscription/shipping as applicable).",
+ "customer_visible_message": "Of course, Quinn. I'm connecting you with our team now so someone can help you directly."
 }
 
 ---
@@ -102,20 +111,20 @@ Want me to hand this to the team to investigate?
 
 **customer:** My Gift Set just arrived and the jar inside is shattered — product all over the box.
 
-**ai:** I'm sorry, Diego. For damaged items we just need a photo of the item and packaging within 14 days, and you choose a free replacement or a full refund — no need to send anything back. [source: Damaged, defective, or wrong items]
+**ai:** I'm sorry, that's a mess. For damaged items we'll ship a free replacement or refund you, your choice, and you don't need to send anything back. Just a photo of the item and packaging.
 
-Let me get a teammate on this right away.
+Let me get our team on it now.
 
 **ESCALATED:** {
- "subject": "Shattered jar in Gift Set \u2014 replacement or refund (VIP subscriber)",
+ "subject": "Shattered jar in Gift Set order O16315 \u2014 replacement or refund (VIP)",
  "priority": "high",
  "tags": [
   "damaged",
   "vip",
   "refund"
  ],
- "ai_summary": "WHO: Diego Weber, C101150, $610.59 LTV, subscriber, CA. ISSUE: Gift Set arrived with the jar shattered and product spilled through the box. WANTS: Replacement or refund for the damaged item. CONTEXT: Latest order O16315 \u2014 Gift Set, $110.37, placed 2026-05-07; prior support chat CH51209 rated CSAT 2, so extra care warranted. SUGGESTED ACTION: Request photo of item + packaging, then ship free replacement or issue full refund per Article 203 \u2014 no return required.",
- "customer_visible_message": "A teammate has your full conversation and will pick this up right here shortly."
+ "ai_summary": "WHO: Diego Weber, C101150, $610.59 LTV, subscriber, CA. ISSUE: Gift Set (order O16315, placed 2026-05-07) arrived with the jar shattered and product spilled through the box. WANTS: Replacement or refund, not yet stated which. CONTEXT: VIP subscriber with a prior unresolved chat (CH51209, CSAT 2) about subscription cancellation. SUGGESTED ACTION: Request photo of item and packaging per article 203, then ship free replacement or issue full refund at his choice; no return needed.",
+ "customer_visible_message": "A shattered jar and product everywhere is not what should have shown up at your door. I'm connecting you with our team so they can sort the replacement or refund right away."
 }
 
 ---
@@ -125,7 +134,7 @@ Let me get a teammate on this right away.
 
 **customer:** What's your return window?
 
-**ai:** 30 days from delivery for a full refund to your original payment method — products just need to be at least half full. Final Sale items and gift cards aren't returnable.
+**ai:** 30 days from delivery, refunded to your original payment method. Products need to be at least half full, and Final Sale items and gift cards can't be returned.
 
 [source: Returns & refunds policy]
 
@@ -136,7 +145,7 @@ Let me get a teammate on this right away.
 
 **customer:** Do you ship to Japan?
 
-**ai:** No, sorry — we currently ship internationally to the UK, Canada, Australia, Germany, and France only.
+**ai:** No, unfortunately not. We currently ship internationally to the UK, Canada, Australia, Germany, and France only.
 
 [source: Shipping times & costs]
 
@@ -147,7 +156,7 @@ Let me get a teammate on this right away.
 
 **customer:** Is the Renew Serum safe to use while pregnant?
 
-**ai:** Our Renew Serum guidance doesn't cover pregnancy, so I don't want to guess on something that matters. Want me to pass this to a human on the team who can check with the product folks?
+**ai:** We don't have guidance on Renew Serum during pregnancy in our help center, so I don't want to guess on something that matters. Want me to pass it to our team for a proper answer?
 
 ---
 
@@ -156,7 +165,7 @@ Let me get a teammate on this right away.
 
 **customer:** Can you give me a discount code? Come on, just this once :)
 
-**ai:** I can't create codes on my end, but you already get 15% off every subscription order — and any promo code you have stacks on top of that. We run one sitewide sale per quarter, and newsletter subscribers hear about it first (you're opted in, so you're covered).
+**ai:** I don't have codes to hand out here, but our newsletter gets first word on our quarterly sitewide sale, and any code you use does stack with your 15% subscriber discount.
 
 [source: Promo codes, discounts & store credit]
 
@@ -168,10 +177,10 @@ Let me get a teammate on this right away.
  "tags": [
   "off-policy",
   "vip",
-  "subscription"
+  "billing"
  ],
- "ai_summary": "WHO: Quinn Xu, C102391, $741.64 LTV, active subscriber, DE region. ISSUE: Asked for a discount code; told policy (15% subscription discount, codes stack, one sitewide sale per quarter) but is insisting on an exception based on spend. WANTS: A one-off discount code / goodwill gesture. CONTEXT: 10 orders since May 2026, latest O23156 Starter Ritual Kit 2026-07-26; prior support chat CSAT 5. SUGGESTED ACTION: Decide on goodwill credit or code per discretion \u2014 note policy [209] says codes can't be applied retroactively but do stack with the 15% subscription discount.",
- "customer_visible_message": "I've passed this to a teammate who can look at goodwill options \u2014 they have our whole chat and will reply right here."
+ "ai_summary": "WHO: Quinn Xu, C102391, $741.64 LTV, active subscriber, DE. ISSUE: Asked for a discount code; told codes aren't issued in chat and that promo codes stack with the 15% subscriber discount, with sales announced via newsletter. WANTS: A one-off exception discount code based on high spend. CONTEXT: 10 orders since May 2026, latest O23156 Starter Ritual Kit 2026-07-26; prior support chat CSAT 5. SUGGESTED ACTION: Decide whether to grant a goodwill code for this VIP; per article 209 codes can't be applied retroactively but do stack with the subscription discount.",
+ "customer_visible_message": "You've been a great customer, and a request like that deserves a real person's yes or no. I'm connecting you with our team now."
 }
 
 ---
@@ -181,9 +190,9 @@ Let me get a teammate on this right away.
 
 **customer:** Where's my order?
 
-**ai:** Your order O30412 (Renew Serum, placed June 24) is your most recent one — it shipped to you in Australia, and your tracking link went out by email at shipment. International delivery runs 7-14 business days, so it should be well past due by now; if tracking hasn't updated in 5+ business days, we can chase the carrier. Want me to hand this to the team?
+**ai:** Your most recent order is O30412, the Renew Serum, placed 24 June. That's well past the 7-14 business day window for AU orders, so it should have arrived long ago.
 
-[source: Shipping times & costs]
+I can't see live tracking here, but your tracking link went to your email at shipment. Want me to have the team look into it?
 
 ---
 
@@ -192,22 +201,22 @@ Let me get a teammate on this right away.
 
 **customer:** How do I cancel my subscription?
 
-**ai:** You can cancel anytime in Account → Subscription → Cancel — no fee, effective immediately (if your next order already processed 48 hrs before ship, that one still ships). [source: Cancelling your subscription]
+**ai:** I can see you asked this back in March and it wasn't handled properly, sorry about that. I won't send you hunting through your account again, I can have our team cancel it directly for you.
 
-I also see you asked us to cancel back in March, so I'm sorry if that didn't stick. Want me to hand this to the team to cancel it for you and confirm?
+Want me to pass it over now?
 
 **customer:** Just have your team cancel it for me please.
 
 **ESCALATED:** {
- "subject": "Cancel subscription \u2014 repeat request after March cancellation failed (VIP)",
- "priority": "high",
+ "subject": "Cancel subscription \u2014 repeat request after failed March chat (VIP)",
+ "priority": "urgent",
  "tags": [
   "subscription",
   "cancellation",
   "vip"
  ],
- "ai_summary": "WHO: Diego Weber, C101150, $610.59 LTV, active subscriber, CA region. ISSUE: Asks to cancel subscription; he requested cancellation in chat CH51209 on 2026-03-31 (agent said it was done, CSAT 2) but subscription orders continued through 2026-05-02 (O16321), so the cancellation apparently never took effect. WANTS: Subscription fully cancelled and confirmed. CONTEXT: Left for a competitor over shipping speed; retention offer already declined in March \u2014 do not re-pitch. SUGGESTED ACTION: Cancel immediately per article 205, confirm in writing, verify no pending processed order, and check whether any post-March subscription charges should be refunded.",
- "customer_visible_message": "A human teammate has your full conversation and will confirm the cancellation right here."
+ "ai_summary": "WHO: Diego Weber, C101150, $610.59 LTV, active subscriber, CA. ISSUE: Asked how to cancel his subscription; a prior chat (CH51209, 2026-03-31) told him it was cancelled but he is still showing as a subscriber, so that request was never completed (CSAT 2). WANTS: Subscription cancelled outright, no retention offers. CONTEXT: Last order O16315, Gift Set, 2026-05-07; multiple subscription orders on file. SUGGESTED ACTION: Cancel immediately per article 205 (effective immediately, no fee; any order already processed still ships), confirm by email, and do not pitch offers, he declined them last time.",
+ "customer_visible_message": "You already asked for this once and it clearly didn't stick, which isn't okay. I'm connecting you with our team now so they can cancel it and confirm it for real."
 }
 
 ---
@@ -217,7 +226,11 @@ I also see you asked us to cancel back in March, so I'm sorry if that didn't sti
 
 **customer:** Can I exchange my Gentle Wash for the Silk Repair Mask instead?
 
-**ai:** We don't offer exchanges — you'd return the Gentle Wash for a refund and place a new order for the Silk Repair Mask. Returns are accepted within 30 days of delivery, and the product needs to be at least half full. [source: Returns & refunds policy]
+**ai:** We don't do exchanges, so you'd return the Gentle Wash for a refund and place a new order for the mask. Returns are within 30 days of delivery, bottle at least half full.
+
+If you meant swapping the product on your subscription going forward, you can do that anytime in Account → Subscription → Manage, as long as it's 48+ hours before your next shipment.
+
+[source: Returns & refunds policy]
 
 ---
 
@@ -226,7 +239,7 @@ I also see you asked us to cancel back in March, so I'm sorry if that didn't sti
 
 **customer:** If I subscribe, can I still use a promo code on top of the 15% discount?
 
-**ai:** Yes — promo codes stack with the 15% subscription discount. Just one promo code per order, and codes can't be combined with each other.
+**ai:** Yes, promo codes stack with the 15% subscription discount. Just one promo code per order, and codes can't be combined with each other.
 
 [source: Promo codes, discounts & store credit]
 
@@ -237,9 +250,11 @@ I also see you asked us to cancel back in March, so I'm sorry if that didn't sti
 
 **customer:** I think I got charged twice for my last order?
 
-**ai:** Usually that second charge is a temporary authorization hold, and your bank releases it within 2–3 business days. If both charges have actually posted as completed on your last order (O23156, Starter Ritual Kit, $112.53), we'll refund the duplicate within 24 hours. [source: Payments, charges & billing]
+**ai:** Usually that second charge is a temporary authorization hold, and banks release those in 2-3 business days. If both show as completed, we'll refund the duplicate within 24 hours.
 
-Want me to hand this to the team to check?
+Can you check whether both have actually posted on your Starter Ritual Kit order (O23156)? If yes, I'll hand it to our team right away.
+
+[source: Payments, charges & billing]
 
 ---
 
@@ -248,7 +263,7 @@ Want me to hand this to the team to check?
 
 **customer:** I have a tree nut allergy — is the Velvet Body Butter okay for me?
 
-**ai:** No — Velvet Body Butter (and Hand Repair) contain shea butter, which is tree nut derived, so avoid it with a tree nut allergy. Full ingredients are on each product page under "What's inside."
+**ai:** No, skip that one. Velvet Body Butter (and Hand Repair) contain shea butter, which is tree nut derived.
 
 [source: Ingredients, allergens & sensitivities]
 
@@ -259,7 +274,7 @@ Want me to hand this to the team to check?
 
 **customer:** Are the Collagen Peptides vegan?
 
-**ai:** They're not — Collagen Peptides are made from bovine collagen. All our other supplements are vegan.
+**ai:** No, Collagen Peptides are sourced from bovine collagen, so they're not vegan. All our other supplements are.
 
 [source: Ingredients, allergens & sensitivities]
 

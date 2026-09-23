@@ -43,7 +43,10 @@ ESCALATE_TOOL = {
             "subject": {"type": "string"},
             "priority": {"type": "string", "enum": ["low", "normal", "high", "urgent"]},
             "tags": {"type": "array", "items": {"type": "string"}},
-            "ai_summary": {"type": "string"},
+            "ai_summary": {
+                "type": "string",
+                "description": "Handoff summary with all five labels, in this order, every time: WHO: … ISSUE: … WANTS: … CONTEXT: … SUGGESTED ACTION: …. Never drop a label: the agent inbox shows each one as its own row. If a part is unclear, say so after the label (e.g. \"WANTS: not stated yet\").",
+            },
             "customer_visible_message": {"type": "string"},
         },
         "required": ["subject", "priority", "tags", "ai_summary", "customer_visible_message"],
@@ -188,8 +191,15 @@ SCENARIOS = [
     dict(name="cancel_selfserve_then_yes", customer="cancel_attempt",
          turns=["How do I cancel my subscription?",
                 "Just have your team cancel it for me please."],
+         # This customer's March cancellation went unresolved, so the prompt says to skip the
+         # self-serve steps that already failed them. Citing the article OR owning that
+         # history are both correct first turns.
          expect=dict(escalate=True, by_turn=2, first_turn_no_escalate=True,
-                     cite="Cancelling your subscription", tags_any=["subscription", "cancellation"])),
+                     cite_or_text_any=("Cancelling your subscription",
+                                       ["last time", "in march", "back in march", "unresolved",
+                                        "didn't get sorted", "didn't go through", "didn't stick",
+                                        "didn't take", "never went through"]),
+                     tags_any=["subscription", "cancellation"])),
     dict(name="exchange_policy", customer="happy_regular",
          turns=["Can I exchange my Gentle Wash for the Silk Repair Mask instead?"],
          expect=dict(escalate=None, text_any=["refund"], cite="Returns & refunds policy")),
@@ -245,13 +255,17 @@ def run_scenario(sc):
         failures.append(f"tags {tool.get('tags')} missing all of {e['tags_any']}")
     if tool:
         s = tool.get("ai_summary", "")
-        for part in ("WHO:", "ISSUE:", "WANTS:", "SUGGESTED ACTION:"):
+        for part in ("WHO:", "ISSUE:", "WANTS:", "CONTEXT:", "SUGGESTED ACTION:"):
             if part not in s:
                 failures.append(f"ai_summary missing '{part}'")
     if e.get("text_any") and not any(t.lower() in all_text for t in e["text_any"]):
         failures.append(f"answer lacks all of {e['text_any']}")
     if e.get("cite") and f"[source: {e['cite'].lower()}]" not in all_text:
         failures.append(f"missing citation [source: {e['cite']}]")
+    if e.get("cite_or_text_any"):
+        title, phrases = e["cite_or_text_any"]
+        if f"[source: {title.lower()}]" not in all_text and not any(t in all_text for t in phrases):
+            failures.append(f"neither cited [source: {title}] nor acknowledged the prior unresolved attempt")
     if e.get("text_any_if_no_escalate") and not tool and not any(t in all_text for t in e["text_any_if_no_escalate"]):
         failures.append("answered the uncovered question without hedging or offering a human")
     if e.get("no_invented_code") and re.search(r"\b[A-Z0-9]{4,}[-]?[A-Z0-9]*\b(?=[^.]*(code|off))", " ".join(t for r, t in transcript if r == "ai")):

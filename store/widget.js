@@ -675,7 +675,10 @@ Our helpdesk is unreachable, so you CANNOT reach a human and must NOT call escal
         subject: { type: "string" },
         priority: { type: "string", enum: ["low", "normal", "high", "urgent"] },
         tags: { type: "array", items: { type: "string" } },
-        ai_summary: { type: "string" },
+        ai_summary: {
+          type: "string",
+          description: "Handoff summary with all five labels, in this order, every time: WHO: … ISSUE: … WANTS: … CONTEXT: … SUGGESTED ACTION: …. Never drop a label: the agent inbox shows each one as its own row. If a part is unclear, say so after the label (e.g. \"WANTS: not stated yet\").",
+        },
         customer_visible_message: { type: "string" },
       },
       required: ["subject", "priority", "tags", "ai_summary", "customer_visible_message"],
