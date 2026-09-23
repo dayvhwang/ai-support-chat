@@ -1,0 +1,26 @@
+# --- secrets: never commit a key ---
+# The key (and optional workspace id) lives in .env. The store's start script copies it
+# into store/config.local.js for the browser; the eval reads .env directly. None of
+# those belong in the repo.
+.env
+.env.*
+anthropic_key
+**/anthropic_key
+config.local.js
+**/config.local.js
+*.pem
+*.key
+
+# --- agent / editor-local config ---
+.claude/
+.context/
+
+# --- os + editor junk ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# --- python ---
+__pycache__/
+*.py[cod]

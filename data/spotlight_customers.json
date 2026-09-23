@@ -1,0 +1,544 @@
+{
+  "angry_vip": {
+    "archetype": "Angry VIP \u2014 high-LTV subscriber, recent unresolved complaint",
+    "profile": {
+      "customer_id": "C102938",
+      "first_name": "Liam",
+      "last_name": "Mora",
+      "signup_date": "2025-05-15",
+      "region": "FR",
+      "email_opt_in": "True",
+      "sms_opt_in": "False",
+      "is_subscriber": "True",
+      "lifetime_value_usd": "746.04"
+    },
+    "orders": [
+      {
+        "order_id": "O26135",
+        "customer_id": "C102938",
+        "order_date": "2025-07-23",
+        "amount_usd": "57.31",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O26133",
+        "customer_id": "C102938",
+        "order_date": "2025-08-15",
+        "amount_usd": "124.69",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O26137",
+        "customer_id": "C102938",
+        "order_date": "2025-09-19",
+        "amount_usd": "96.64",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O26136",
+        "customer_id": "C102938",
+        "order_date": "2025-10-19",
+        "amount_usd": "117.32",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O26131",
+        "customer_id": "C102938",
+        "order_date": "2025-11-13",
+        "amount_usd": "60.24",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O26134",
+        "customer_id": "C102938",
+        "order_date": "2025-12-19",
+        "amount_usd": "32.51",
+        "category": "supplements",
+        "product": "Collagen Peptides",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O26132",
+        "customer_id": "C102938",
+        "order_date": "2026-01-12",
+        "amount_usd": "45.48",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O26139",
+        "customer_id": "C102938",
+        "order_date": "2026-02-05",
+        "amount_usd": "116.07",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O26138",
+        "customer_id": "C102938",
+        "order_date": "2026-05-12",
+        "amount_usd": "43.18",
+        "category": "skincare",
+        "product": "Renew Serum",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O26130",
+        "customer_id": "C102938",
+        "order_date": "2026-05-12",
+        "amount_usd": "52.6",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      }
+    ],
+    "chats": [
+      {
+        "chat_id": "CH53031",
+        "customer_id": "C102938",
+        "channel": "live_widget",
+        "started_at": "2025-12-04T22:00:00",
+        "agent_name": "Sam",
+        "resolved": false,
+        "csat": 1,
+        "messages": [
+          {
+            "role": "customer",
+            "text": "My order was supposed to arrive 5 days ago and tracking hasn't moved.",
+            "ts": "2025-12-04T22:02:18"
+          },
+          {
+            "role": "agent",
+            "text": "So sorry about that! Let me pull up the tracking details for you.",
+            "ts": "2025-12-04T22:03:29"
+          },
+          {
+            "role": "customer",
+            "text": "Every single order has some issue. I'm getting really tired of this.",
+            "ts": "2025-12-04T22:05:08"
+          },
+          {
+            "role": "agent",
+            "text": "I've escalated this to our logistics team \u2014 you should hear back within 3-5 business days.",
+            "ts": "2025-12-04T22:06:12"
+          },
+          {
+            "role": "customer",
+            "text": "3-5 days?? I just want my order.",
+            "ts": "2025-12-04T22:07:24"
+          }
+        ]
+      }
+    ]
+  },
+  "cancel_attempt": {
+    "archetype": "Recent cancellation \u2014 asked to cancel, wasn't saved",
+    "profile": {
+      "customer_id": "C101150",
+      "first_name": "Diego",
+      "last_name": "Weber",
+      "signup_date": "2026-02-14",
+      "region": "CA",
+      "email_opt_in": "True",
+      "sms_opt_in": "True",
+      "is_subscriber": "True",
+      "lifetime_value_usd": "610.59"
+    },
+    "orders": [
+      {
+        "order_id": "O16319",
+        "customer_id": "C101150",
+        "order_date": "2026-02-19",
+        "amount_usd": "51.68",
+        "category": "skincare",
+        "product": "Glow SPF 40",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O16316",
+        "customer_id": "C101150",
+        "order_date": "2026-03-12",
+        "amount_usd": "55.8",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O16320",
+        "customer_id": "C101150",
+        "order_date": "2026-03-19",
+        "amount_usd": "83.98",
+        "category": "bundles",
+        "product": "Full Routine Bundle",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O16317",
+        "customer_id": "C101150",
+        "order_date": "2026-03-23",
+        "amount_usd": "62.84",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O16314",
+        "customer_id": "C101150",
+        "order_date": "2026-04-04",
+        "amount_usd": "130.14",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O16318",
+        "customer_id": "C101150",
+        "order_date": "2026-04-15",
+        "amount_usd": "67.22",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O16321",
+        "customer_id": "C101150",
+        "order_date": "2026-05-02",
+        "amount_usd": "48.56",
+        "category": "supplements",
+        "product": "Collagen Peptides",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O16315",
+        "customer_id": "C101150",
+        "order_date": "2026-05-07",
+        "amount_usd": "110.37",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "False"
+      }
+    ],
+    "chats": [
+      {
+        "chat_id": "CH51209",
+        "customer_id": "C101150",
+        "channel": "live_widget",
+        "started_at": "2026-03-31T11:00:00",
+        "agent_name": "Sam",
+        "resolved": false,
+        "csat": 2,
+        "messages": [
+          {
+            "role": "customer",
+            "text": "How do I cancel my subscription? I can't find it in my account.",
+            "ts": "2026-03-31T11:00:35"
+          },
+          {
+            "role": "agent",
+            "text": "I'm sorry to hear that! May I ask what's prompting the cancellation today?",
+            "ts": "2026-03-31T11:02:49"
+          },
+          {
+            "role": "customer",
+            "text": "I switched to a competitor, their shipping is faster.",
+            "ts": "2026-03-31T11:03:27"
+          },
+          {
+            "role": "agent",
+            "text": "Totally understand. I can offer 30% off your next three orders, or switch you to a slower cadence \u2014 would either help?",
+            "ts": "2026-03-31T11:05:19"
+          },
+          {
+            "role": "customer",
+            "text": "I appreciate it but please just cancel.",
+            "ts": "2026-03-31T11:06:12"
+          },
+          {
+            "role": "agent",
+            "text": "Understood \u2014 your subscription is cancelled. You'll receive a confirmation email shortly.",
+            "ts": "2026-03-31T11:08:05"
+          }
+        ]
+      }
+    ]
+  },
+  "quiet_fader": {
+    "archetype": "Quiet fader \u2014 used to order often, silent for months",
+    "profile": {
+      "customer_id": "C100199",
+      "first_name": "Iris",
+      "last_name": "Ferro",
+      "signup_date": "2024-08-06",
+      "region": "UK",
+      "email_opt_in": "False",
+      "sms_opt_in": "True",
+      "is_subscriber": "True",
+      "lifetime_value_usd": "863.87"
+    },
+    "orders": [
+      {
+        "order_id": "O11023",
+        "customer_id": "C100199",
+        "order_date": "2024-08-27",
+        "amount_usd": "54.77",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11022",
+        "customer_id": "C100199",
+        "order_date": "2024-09-09",
+        "amount_usd": "116.4",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11030",
+        "customer_id": "C100199",
+        "order_date": "2024-09-17",
+        "amount_usd": "119.22",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O11028",
+        "customer_id": "C100199",
+        "order_date": "2024-09-17",
+        "amount_usd": "74.75",
+        "category": "bundles",
+        "product": "Full Routine Bundle",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11024",
+        "customer_id": "C100199",
+        "order_date": "2024-09-24",
+        "amount_usd": "92.86",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11029",
+        "customer_id": "C100199",
+        "order_date": "2024-11-18",
+        "amount_usd": "70.39",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11026",
+        "customer_id": "C100199",
+        "order_date": "2024-12-14",
+        "amount_usd": "107.51",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O11027",
+        "customer_id": "C100199",
+        "order_date": "2025-03-14",
+        "amount_usd": "53.87",
+        "category": "wellness-tea",
+        "product": "Focus Blend",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11025",
+        "customer_id": "C100199",
+        "order_date": "2025-04-02",
+        "amount_usd": "129.46",
+        "category": "bundles",
+        "product": "Full Routine Bundle",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O11021",
+        "customer_id": "C100199",
+        "order_date": "2025-04-04",
+        "amount_usd": "44.64",
+        "category": "skincare",
+        "product": "Dew Cream",
+        "is_subscription_order": "False"
+      }
+    ],
+    "chats": []
+  },
+  "happy_regular": {
+    "archetype": "Happy regular \u2014 recent order, left glowing feedback",
+    "profile": {
+      "customer_id": "C102391",
+      "first_name": "Quinn",
+      "last_name": "Xu",
+      "signup_date": "2026-05-11",
+      "region": "DE",
+      "email_opt_in": "True",
+      "sms_opt_in": "False",
+      "is_subscriber": "True",
+      "lifetime_value_usd": "741.64"
+    },
+    "orders": [
+      {
+        "order_id": "O23157",
+        "customer_id": "C102391",
+        "order_date": "2026-05-19",
+        "amount_usd": "53.8",
+        "category": "haircare",
+        "product": "Gentle Wash",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O23162",
+        "customer_id": "C102391",
+        "order_date": "2026-05-21",
+        "amount_usd": "121.07",
+        "category": "bundles",
+        "product": "Full Routine Bundle",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O23154",
+        "customer_id": "C102391",
+        "order_date": "2026-05-24",
+        "amount_usd": "64.0",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O23155",
+        "customer_id": "C102391",
+        "order_date": "2026-05-31",
+        "amount_usd": "92.1",
+        "category": "bundles",
+        "product": "Gift Set",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O23159",
+        "customer_id": "C102391",
+        "order_date": "2026-06-05",
+        "amount_usd": "58.44",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O23163",
+        "customer_id": "C102391",
+        "order_date": "2026-07-05",
+        "amount_usd": "21.89",
+        "category": "haircare",
+        "product": "Silk Repair Mask",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O23161",
+        "customer_id": "C102391",
+        "order_date": "2026-07-08",
+        "amount_usd": "94.66",
+        "category": "bundles",
+        "product": "Full Routine Bundle",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O23158",
+        "customer_id": "C102391",
+        "order_date": "2026-07-10",
+        "amount_usd": "94.72",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      },
+      {
+        "order_id": "O23160",
+        "customer_id": "C102391",
+        "order_date": "2026-07-19",
+        "amount_usd": "28.43",
+        "category": "body-care",
+        "product": "Velvet Body Butter",
+        "is_subscription_order": "False"
+      },
+      {
+        "order_id": "O23156",
+        "customer_id": "C102391",
+        "order_date": "2026-07-26",
+        "amount_usd": "112.53",
+        "category": "bundles",
+        "product": "Starter Ritual Kit",
+        "is_subscription_order": "True"
+      }
+    ],
+    "chats": [
+      {
+        "chat_id": "CH52473",
+        "customer_id": "C102391",
+        "channel": "live_widget",
+        "started_at": "2026-06-23T21:00:00",
+        "agent_name": "Marco",
+        "resolved": true,
+        "csat": 5,
+        "messages": [
+          {
+            "role": "customer",
+            "text": "Your support team helped me last week and the replacement arrived so fast. Thank you!",
+            "ts": "2026-06-23T21:01:20"
+          },
+          {
+            "role": "agent",
+            "text": "That absolutely made our day \u2014 thank you for sharing! Anything else I can help with?",
+            "ts": "2026-06-23T21:02:39"
+          },
+          {
+            "role": "customer",
+            "text": "Nope, that's all. Keep it up!",
+            "ts": "2026-06-23T21:04:58"
+          }
+        ]
+      }
+    ]
+  },
+  "brand_new": {
+    "archetype": "Brand new \u2014 first order just placed",
+    "profile": {
+      "customer_id": "C103735",
+      "first_name": "Vera",
+      "last_name": "Torres",
+      "signup_date": "2026-06-14",
+      "region": "AU",
+      "email_opt_in": "True",
+      "sms_opt_in": "False",
+      "is_subscriber": "False",
+      "lifetime_value_usd": "31.19"
+    },
+    "orders": [
+      {
+        "order_id": "O30412",
+        "customer_id": "C103735",
+        "order_date": "2026-06-24",
+        "amount_usd": "31.19",
+        "category": "skincare",
+        "product": "Renew Serum",
+        "is_subscription_order": "False"
+      }
+    ],
+    "chats": []
+  }
+}

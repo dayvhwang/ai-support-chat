@@ -1,0 +1,70 @@
+{
+  "articles": [
+    {
+      "id": 201,
+      "title": "Shipping times & costs",
+      "labels": ["shipping", "delivery", "tracking"],
+      "body": "US orders ship from our Nevada warehouse within 1 business day. Standard shipping takes 3-5 business days and costs $5.95, or is FREE on orders over $50. Expedited shipping (2 business days) is $14.95. We currently ship internationally to the UK, Canada, Australia, Germany, and France only; international orders take 7-14 business days and cost $19.95 flat. You'll receive a tracking link by email the moment your order leaves the warehouse. If tracking hasn't updated for 5+ business days, contact support and we'll investigate with the carrier."
+    },
+    {
+      "id": 202,
+      "title": "Returns & refunds policy",
+      "labels": ["returns", "refunds", "policy"],
+      "body": "We accept returns within 30 days of delivery for a full refund to your original payment method. Products must be at least half full to be eligible (we get it — you need to try it to know). To start a return, contact support with your order number; we'll email a prepaid return label. Refunds are processed within 3-5 business days of the returned item arriving at our warehouse. Items marked Final Sale and gift cards are not returnable. We do not offer exchanges — return for a refund and place a new order instead."
+    },
+    {
+      "id": 203,
+      "title": "Damaged, defective, or wrong items",
+      "labels": ["damaged", "defective", "wrong-item", "refunds"],
+      "body": "If your order arrives damaged, defective, or incorrect, contact support within 14 days of delivery with a photo of the item and packaging. We'll ship a free replacement immediately or issue a full refund — your choice — and you do NOT need to return the damaged item. Damaged-item claims never count against the 30-day return window."
+    },
+    {
+      "id": 204,
+      "title": "Managing your subscription",
+      "labels": ["subscription", "manage", "skip", "pause", "cadence"],
+      "body": "Subscriptions save you 15% on every order and ship on your chosen cadence: every 30, 45, or 60 days. You can skip a shipment, pause for up to 3 months, change your cadence, or swap products anytime in Account → Subscription → Manage — changes take effect immediately as long as they're made at least 48 hours before your next scheduled shipment. There is no minimum commitment and no fee to modify."
+    },
+    {
+      "id": 205,
+      "title": "Cancelling your subscription",
+      "labels": ["subscription", "cancel", "cancellation"],
+      "body": "You can cancel anytime in Account → Subscription → Cancel, or by asking support — no phone call required, no cancellation fee. Cancellation takes effect immediately; if your next order has already been processed (orders process 48 hours before ship date), that order will still ship, but nothing after it. Cancelled subscribers keep their account, order history, and any unused store credit. You can restart a subscription anytime and your 15% discount resumes."
+    },
+    {
+      "id": 206,
+      "title": "Renew Serum — usage FAQ",
+      "labels": ["renew-serum", "skincare", "retinol", "usage"],
+      "body": "Apply 2-3 drops of Renew Serum to clean, dry skin morning and night, before moisturizer. It is safe to layer with retinol: apply Renew Serum first, wait 60 seconds, then apply your retinol product. It pairs well with Glow SPF 40 for daytime. Not recommended for use with prescription tretinoin without consulting your dermatologist. One 30ml bottle lasts approximately 6 weeks with twice-daily use."
+    },
+    {
+      "id": 207,
+      "title": "Sleep Gummies — ingredients & dosage",
+      "labels": ["sleep-gummies", "supplements", "melatonin", "dosage"],
+      "body": "Each serving (2 gummies) contains 3mg melatonin, 200mg chamomile extract, and 100mg L-theanine. Take 2 gummies 30-45 minutes before bed. Vegan, gluten-free, and made without artificial colors. Not intended for children under 18 or during pregnancy — consult your physician. Do not exceed one serving per 24 hours. Each jar contains 30 servings."
+    },
+    {
+      "id": 208,
+      "title": "Ingredients, allergens & sensitivities",
+      "labels": ["ingredients", "allergens", "sensitive-skin", "vegan"],
+      "body": "All Ritual Goods products are cruelty-free and formulated without parabens, phthalates, or synthetic fragrance. The Velvet Body Butter and Hand Repair contain shea butter (tree nut derived) — avoid if you have a tree nut allergy. Collagen Peptides are sourced from bovine collagen and are NOT vegan; all other supplements are vegan. The full ingredient list for every product is on its product page under 'What's inside'. For sensitive skin we recommend patch testing any new skincare product on your inner arm for 24 hours."
+    },
+    {
+      "id": 209,
+      "title": "Promo codes, discounts & store credit",
+      "labels": ["promo", "discount", "codes", "store-credit"],
+      "body": "One promo code may be applied per order and codes cannot be combined with each other, but they DO stack with the 15% subscription discount. Promo codes cannot be applied retroactively to orders already placed. Expired influencer codes cannot be honored. Store credit from refunds or our referral program never expires and applies automatically at checkout before your payment method is charged. We run one sitewide sale per quarter — sign up for our newsletter to hear about it first."
+    },
+    {
+      "id": 210,
+      "title": "Payments, charges & billing",
+      "labels": ["billing", "payment", "charged-twice", "receipt"],
+      "body": "We accept all major credit cards, PayPal, Apple Pay, and Shop Pay. Subscription orders are charged when the order processes, 48 hours before shipping, and you'll receive a reminder email 3 days before every subscription charge. If you see a duplicate charge, it's usually a temporary authorization hold that your bank releases within 2-3 business days; if both charges post as completed, contact support with your order number and we'll refund the duplicate within 24 hours."
+    },
+    {
+      "id": 211,
+      "title": "Restocks & waitlists",
+      "labels": ["restock", "out-of-stock", "waitlist"],
+      "body": "Sold-out products show a 'Notify me' button on their product page — join the waitlist and we'll email you the moment stock returns. Waitlist members get a 24-hour early-access window before the restock is announced publicly. We restock most products every 3-4 weeks. We cannot reserve or hold stock outside the waitlist system, even for subscribers."
+    }
+  ]
+}
