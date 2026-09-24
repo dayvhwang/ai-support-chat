@@ -74,24 +74,72 @@ dashboard shows how often the AI answered on its own vs. handed off, and why.
 - If something breaks, the widget says so plainly: helpdesk offline, API error, bad
   key, or a failed delivery after escalation. It never pretends a handoff happened.
 
-## The handoff (agent side)
+## The agent side: Inbox and Dashboard
 
-Deskly's ticket API and data model are unchanged. The AI's ticket (`POST /tickets`)
-carries the transcript, priority, tags, a structured summary (WHO / ISSUE / WANTS /
-CONTEXT / SUGGESTED ACTION) and a customer snapshot in `requester.profile`. Before the
-agent reads a word, the inbox (`helpdesk/inbox.html`) shows:
+Deskly's agent page (`helpdesk/inbox.html`, at http://localhost:8099) has two tabs in
+its header. They answer different questions for different people:
+
+|  | **Inbox** | **Dashboard** |
+| --- | --- | --- |
+| **Who it's for** | The support agent handling tickets | Whoever runs support (a founder or team lead) |
+| **The question it answers** | "Who needs help right now, and what do I do?" | "How well is the AI doing, and why do people still need a human?" |
+| **What's in it** | Only conversations the AI **escalated**, one ticket each | **Every** conversation: the ones the AI answered alone plus the ones it escalated |
+| **Level of detail** | One customer at a time: full transcript, summary, account context | Counts and trends across all customers; no transcripts |
+| **What you do there** | Read, reply, and see tickets get solved | Read only (plus a reset button for demo data) |
+| **Data source** | Tickets (`GET /tickets`, `GET /tickets/{id}/comments`) | Tickets **joined with** AI-answer events (`GET /stats`) |
+
+The key difference: **a conversation the AI handles on its own never becomes a ticket,
+so it never appears in the Inbox.** The Dashboard is the only place those conversations
+show up, which is what makes it possible to see how often a human was actually needed.
+
+### Inbox: one escalated conversation at a time
+
+When the AI escalates, the widget files a ticket (`POST /tickets`). The Inbox lists
+those tickets (filterable by **All / New / Open / Solved**) and, for the selected one,
+shows:
 
 - **Who they're talking to**: lifetime value, VIP and subscriber badges, tenure,
-  region, recent orders, and past support history with satisfaction scores.
-- **A handoff they can act on**: the summary as ISSUE / WANTS / CONTEXT rows, with
-  SUGGESTED ACTION as the callout.
+  region, plan, average and last order, recent orders, and past support chats with
+  satisfaction scores.
+- **A handoff they can act on**: the AI's summary as ISSUE / WANTS / CONTEXT rows, with
+  SUGGESTED ACTION as the callout, plus the priority and tags the AI chose.
 - **The conversation**: the chat before escalation as customer/AI bubbles, then the live
   thread. Enter sends, and the reply appears in the customer's chat within about two
-  seconds.
-- **The Dashboard tab**: % of conversations the AI handled alone, escalations by reason
-  and priority, which articles answers came from, average turns before handoff, and a
-  live activity feed. The widget reports the one thing Deskly can't see on its own, an
-  answer that needed no human (`POST /events`).
+  seconds. When the customer taps "That solved it ✓", the ticket flips to Solved.
+
+**What each ticket stores:** subject, priority, tags, the AI's handoff summary, the
+transcript up to escalation, a snapshot of the customer's account (in
+`requester.profile`), how many turns the AI took before escalating, every later message
+from the customer or the agent, and its status (new → open → solved, with the time it
+was solved).
+
+### Dashboard: the whole picture, in numbers
+
+The Dashboard reads `GET /stats`, which combines two sources. Deskly already knows
+every escalation because each one is a ticket. The only thing it can't see is a
+conversation the AI finished without help, so the widget reports just that
+(`POST /events`, one event per answer). The Dashboard shows:
+
+- **Handled by AI**: the share of conversations that needed no human (AI answers ÷ AI
+  answers + escalations), with the raw counts.
+- **Escalated**: how many tickets were filed and how many are still unsolved.
+- **Solved after human help**: tickets the customer confirmed were resolved.
+- **Avg turns before handoff**: how long the AI tried before handing off.
+- **Escalation reasons**: tickets grouped by tag (shipping, angry-customer, vip, …).
+- **Priority mix**: urgent / high / normal / low.
+- **What the AI answered**: AI-only answers grouped by the help-center article they
+  cited, which shows which articles do the most work.
+- **Recent activity**: a live feed of answers, escalations and solves. Click an
+  escalation or solve to jump to that ticket in the Inbox.
+
+**What each AI-answer event stores:** the customer ID, the question they asked, the
+article the answer cited (if any), which turn of the conversation it was, and when it
+happened. It does **not** store the AI's reply or the rest of the conversation;
+conversations the AI handled alone keep only this summary.
+
+Both tabs refresh every two seconds while open. Everything lives in Deskly's memory:
+restarting Deskly clears tickets and events, and the Dashboard's reset button clears
+only the AI-answer events (tickets are kept).
 
 ## Tested by an eval
 
