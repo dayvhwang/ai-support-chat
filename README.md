@@ -160,9 +160,12 @@ python3 evals/eval_escalation.py   # Deskly must be running; reads the key from 
 **https://ai-support-chat-alpha.vercel.app/deskly** is the agent side (Inbox + Dashboard).
 Open them side by side.
 
-- The chat asks for your own Anthropic API key the first time; it stays in your browser.
-  If your key isn't scoped to a workspace, run
-  `localStorage.setItem("anthropic_workspace", "wrkspc_…")` in the browser console once.
+- No API key needed: the hosted widget sends Claude requests to `/api/claude`, a small
+  server-side relay (`api/claude.py`) that adds the site owner's key from Vercel
+  environment variables. The key never reaches the page or the repo. The relay only
+  accepts same-site requests for the widget's model, caps reply length and request size,
+  and rate-limits each visitor; a spend limit on the key's Anthropic workspace is the
+  real backstop.
 - Deskly runs as a Vercel function (`api/deskly.py`) with in-memory state, so tickets
   and dashboard numbers reset whenever the function goes cold. For a durable run, use
   the local setup below.
@@ -260,6 +263,7 @@ helpdesk/                    AGENT SIDE
 
 data/                        customers, orders, past support chats
 api/deskly.py                Deskly as a Vercel function (hosted demo)
+api/claude.py                server-side Claude relay for the hosted demo (holds the key)
 vercel.json                  hosted routes: / → store, /deskly → inbox, /api/v2 → Deskly
 evals/eval_escalation.py     escalation eval (17 scenarios)
 evals/eval_results.md        latest transcripts

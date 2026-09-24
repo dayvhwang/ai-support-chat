@@ -1,15 +1,55 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "builds": [
-    { "src": "api/deskly.py", "use": "@vercel/python", "config": { "includeFiles": ["helpdesk/**"] } },
-    { "src": "store/store.html", "use": "@vercel/static" },
-    { "src": "store/widget.js", "use": "@vercel/static" }
+    {
+      "src": "api/deskly.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "helpdesk/**"
+        ]
+      }
+    },
+    {
+      "src": "api/claude.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "store/store.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "store/widget.js",
+      "use": "@vercel/static"
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "headers": { "Cache-Control": "no-store" }, "continue": true },
-    { "src": "/", "dest": "/store/store.html" },
-    { "src": "/widget.js", "dest": "/store/widget.js" },
-    { "src": "/deskly", "dest": "/api/deskly.py" },
-    { "src": "/api/v2/(.*)", "dest": "/api/deskly.py" }
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Cache-Control": "no-store"
+      },
+      "continue": true
+    },
+    {
+      "src": "/",
+      "dest": "/store/store.html"
+    },
+    {
+      "src": "/widget.js",
+      "dest": "/store/widget.js"
+    },
+    {
+      "src": "/api/claude",
+      "dest": "/api/claude.py"
+    },
+    {
+      "src": "/deskly",
+      "dest": "/api/deskly.py"
+    },
+    {
+      "src": "/api/v2/(.*)",
+      "dest": "/api/deskly.py"
+    }
   ]
 }

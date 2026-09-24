@@ -5,10 +5,12 @@
 (function () {
   "use strict";
 
-  // Local dev talks to deskly.py on :8099; a hosted deploy serves Deskly on the same origin.
-  const DESKLY = window.RITUAL_DESKLY ||
-    (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://localhost:8099/api/v2" : "/api/v2");
-  const CLAUDE = "https://api.anthropic.com/v1/messages";
+  // Local dev talks to deskly.py on :8099 and to Anthropic with a local key. A hosted deploy
+  // serves Deskly on the same origin and relays Claude calls through /api/claude, which holds
+  // the site's key server-side, so visitors never need (or see) one.
+  const HOSTED = !/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const DESKLY = window.RITUAL_DESKLY || (HOSTED ? "/api/v2" : "http://localhost:8099/api/v2");
+  const CLAUDE = HOSTED ? "/api/claude" : "https://api.anthropic.com/v1/messages";
   const MODEL = "claude-opus-5";
   const TODAY = new Date().toISOString().slice(0, 10); // live: a pinned date silently ages into a wrong one
   // Merchant-provided fallback for when the helpdesk can't be reached. This is config,
@@ -481,14 +483,16 @@
   // Order: a machine-local key (window.RITUAL_AI_KEY, e.g. a gitignored config script)
   // → this browser's localStorage → ask. Never the repo: a key in source is a leaked key.
   function storedKey() {
+    if (HOSTED) return "server-relay"; // the relay adds the site's key; nothing to store here
     let saved = "";
     try { saved = localStorage.getItem("anthropic_key") || ""; } catch { /* private mode */ }
     return String(window.RITUAL_AI_KEY || saved || "").trim();
   }
 
-  // Keys that aren't scoped to a workspace must name one per request: from the local config
-  // script (window.RITUAL_AI_WORKSPACE) or, on a hosted deploy, this browser's localStorage.
+  // Keys that aren't scoped to a workspace must name one per request, from the local config
+  // script (window.RITUAL_AI_WORKSPACE) or this browser's localStorage. Hosted: the relay does it.
   function claudeHeaders(key) {
+    if (HOSTED) return { "content-type": "application/json" };
     const h = {
       "content-type": "application/json",
       "x-api-key": key,
