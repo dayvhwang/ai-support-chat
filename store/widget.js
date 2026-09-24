@@ -5,7 +5,9 @@
 (function () {
   "use strict";
 
-  const DESKLY = "http://localhost:8099/api/v2";
+  // Local dev talks to deskly.py on :8099; a hosted deploy serves Deskly on the same origin.
+  const DESKLY = window.RITUAL_DESKLY ||
+    (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://localhost:8099/api/v2" : "/api/v2");
   const CLAUDE = "https://api.anthropic.com/v1/messages";
   const MODEL = "claude-opus-5";
   const TODAY = new Date().toISOString().slice(0, 10); // live: a pinned date silently ages into a wrong one
@@ -484,8 +486,8 @@
     return String(window.RITUAL_AI_KEY || saved || "").trim();
   }
 
-  // Keys that aren't scoped to a workspace must name one per request; the same local
-  // config script can set window.RITUAL_AI_WORKSPACE for that.
+  // Keys that aren't scoped to a workspace must name one per request: from the local config
+  // script (window.RITUAL_AI_WORKSPACE) or, on a hosted deploy, this browser's localStorage.
   function claudeHeaders(key) {
     const h = {
       "content-type": "application/json",
@@ -493,7 +495,9 @@
       "anthropic-version": "2023-06-01",
       "anthropic-dangerous-direct-browser-access": "true",
     };
-    const ws = String(window.RITUAL_AI_WORKSPACE || "").trim();
+    let saved = "";
+    try { saved = localStorage.getItem("anthropic_workspace") || ""; } catch { /* private mode */ }
+    const ws = String(window.RITUAL_AI_WORKSPACE || saved).trim();
     if (ws) h["anthropic-workspace-id"] = ws;
     return h;
   }

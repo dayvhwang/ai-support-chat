@@ -9,7 +9,7 @@ API:    http://localhost:8099/api/v2 → see API.md for endpoints
 The chat widget talks to this API. Human support agents use the inbox UI.
 State is in-memory; restart = clean slate.
 """
-import json, re, time, itertools
+import json, os, re, time, itertools
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 
@@ -19,20 +19,22 @@ TICKETS = {}   # id -> ticket dict (with "comments": [...])
 EVENTS = []    # chatbot extension: AI-handled conversations the widget reports (see API.md)
 OUTAGE = False # demo control: when True, cross-origin (widget) API calls get a 503
 
-with open("articles.json") as f:
+# Files are read relative to this module, so Deskly runs from any directory (and as a
+# Vercel function, where the working directory is the project root).
+HERE = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(HERE, "articles.json")) as f:
     ARTICLES = json.load(f)["articles"]
 
-# The agent inbox UI lives in inbox.html next to this file (same relative-path
-# assumption as articles.json above). Read per request so a refresh picks up edits.
-INBOX_FILE = "inbox.html"
+# The agent inbox UI lives in inbox.html next to this file. Read per request so a
+# refresh picks up edits.
+INBOX_FILE = os.path.join(HERE, "inbox.html")
 
 def inbox_html():
     try:
         with open(INBOX_FILE, encoding="utf-8") as f:
             return f.read()
     except OSError:
-        return ("<h1>inbox.html not found</h1><p>Run deskly.py from inside "
-                "<code>helpdesk/</code> so it can find inbox.html and articles.json.</p>")
+        return "<h1>inbox.html not found</h1><p>It should sit next to deskly.py.</p>"
 
 def now(): return time.strftime("%Y-%m-%dT%H:%M:%S")
 
@@ -108,7 +110,7 @@ class Handler(BaseHTTPRequestHandler):
         u = urlparse(self.path)
         if self._outage_blocked(u.path):
             return self._send(503, {"error": "ServiceUnavailable", "details": "simulated outage"})
-        if u.path in ("/", "/inbox"):
+        if u.path in ("/", "/inbox", "/deskly"):   # /deskly: the hosted route
             return self._send(200, inbox_html(), "text/html")
         if u.path == "/api/v2/help_center/articles":
             return self._send(200, {"articles": ARTICLES, "count": len(ARTICLES)})

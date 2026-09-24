@@ -1,0 +1,15 @@
+# Never upload secrets: the key lives in .env and the store's generated config.local.js.
+.env
+.env.*
+**/config.local.js
+anthropic_key
+**/anthropic_key
+*.pem
+*.key
+# Local tooling and non-site files
+.claude/
+.context/
+.conductor/
+evals/
+data/
+**/__pycache__/

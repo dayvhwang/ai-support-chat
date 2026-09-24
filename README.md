@@ -154,6 +154,19 @@ transcripts in `evals/eval_results.md`.
 python3 evals/eval_escalation.py   # Deskly must be running; reads the key from .env
 ```
 
+## Live demo
+
+**https://ai-support-chat-alpha.vercel.app** is the storefront with the chat widget, and
+**https://ai-support-chat-alpha.vercel.app/deskly** is the agent side (Inbox + Dashboard).
+Open them side by side.
+
+- The chat asks for your own Anthropic API key the first time; it stays in your browser.
+  If your key isn't scoped to a workspace, run
+  `localStorage.setItem("anthropic_workspace", "wrkspc_…")` in the browser console once.
+- Deskly runs as a Vercel function (`api/deskly.py`) with in-memory state, so tickets
+  and dashboard numbers reset whenever the function goes cold. For a durable run, use
+  the local setup below.
+
 ## Run it
 
 Put your Anthropic API key in a `.env` file at the repo root (it's gitignored):
@@ -246,6 +259,8 @@ helpdesk/                    AGENT SIDE
   articles.json              help-center articles, the AI's source of truth
 
 data/                        customers, orders, past support chats
+api/deskly.py                Deskly as a Vercel function (hosted demo)
+vercel.json                  hosted routes: / → store, /deskly → inbox, /api/v2 → Deskly
 evals/eval_escalation.py     escalation eval (17 scenarios)
 evals/eval_results.md        latest transcripts
 ```

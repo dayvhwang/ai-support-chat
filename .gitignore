@@ -24,3 +24,8 @@ config.local.js
 # --- python ---
 __pycache__/
 *.py[cod]
+
+# --- vercel ---
+.vercel/
+.vercel
+.env*

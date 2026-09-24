@@ -1,0 +1,1 @@
+# Deskly uses only the Python standard library; this file tells Vercel to build api/*.py.
