@@ -164,8 +164,10 @@ Open them side by side.
   server-side relay (`api/claude.py`) that adds the site owner's key from Vercel
   environment variables. The key never reaches the page or the repo. The relay only
   accepts same-site requests for the widget's model, caps reply length and request size,
-  and rate-limits each visitor; a spend limit on the key's Anthropic workspace is the
-  real backstop.
+  rate-limits each visitor, and gives each browser session a **$1 budget**: it prices
+  every reply from the usage Anthropic returns and keeps the running total in a signed,
+  HttpOnly session cookie, refusing further requests once the visit has used $1. A spend
+  limit on the key's Anthropic workspace is the real backstop.
 - Deskly runs as a Vercel function (`api/deskly.py`) with in-memory state, so tickets
   and dashboard numbers reset whenever the function goes cold. For a durable run, use
   the local setup below.

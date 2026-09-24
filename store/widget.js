@@ -752,6 +752,10 @@ Our helpdesk is unreachable, so you CANNOT reach a human and must NOT call escal
           ? " — the key in window.RITUAL_AI_KEY was rejected."
           : " — API key rejected; cleared from storage, you'll be asked for a new one.";
       }
+      if (/^API 402/.test(String(e.message))) {
+        showError(typing, "That's the end of this demo's AI budget for your visit.", detail);
+        return;
+      }
       showError(typing, "I couldn't reach our AI service just now.", detail);
       return;
     }
